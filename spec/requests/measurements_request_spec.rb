@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Measurements', type: :request do
-  before { post '/users', params: { username: 'David', password: '123456' } }
+  before { post '/users', params: { username: 'david', password: '123456' } }
   before do
-    user = User.find_by(username: 'David')
+    user = User.find_by(username: 'david')
     unit = create(:unit)
-    create_list(:measurement, 24, user: user, unit: unit)
+    create_list(:measurement, 15, user: user, unit: unit)
   end
   let(:token) do
     body = JSON.parse(response.body)
@@ -18,7 +18,7 @@ RSpec.describe 'Measurements', type: :request do
       get '/measurements', headers: { Authorization: "Bearer #{token}" }
       unit = Unit.last
       body = JSON.parse(response.body)
-      expect(body['data'][unit.title].size).to eql(24)
+      expect(body['data'][unit.title].size).to eql(15)
     end
   end
 

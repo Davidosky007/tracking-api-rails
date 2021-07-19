@@ -3,7 +3,7 @@ require_relative '../support/factories'
 
 RSpec.describe 'Units', type: :request do
   before { create_list(:unit, 10) }
-  before { post '/users', params: { username: 'jumoke', password: '12345' } }
+  before { post '/users', params: { username: 'patrick', password: '12345' } }
   ENV['SECRET'] = 's3cr3t' if Rails.env.test?
 
   describe 'GET /units' do
