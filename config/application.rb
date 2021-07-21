@@ -19,7 +19,7 @@ require 'action_cable/engine'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module TrackingApiRails
+module TrackingApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
@@ -37,11 +37,11 @@ module TrackingApiRails
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
     config.force_ssl = true unless Rails.env.test?
-    # config.middleware.insert_before 0, Rack.Cors do
-    #   allow do
-    #     origins '*'
-    #     resource '*', headers: :any, methods: %i[get post options]
-    #   end
-    # end
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: %i[get post options]
+      end
+    end
   end
 end
