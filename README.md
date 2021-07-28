@@ -1,9 +1,9 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Healthify Api
+# TrackLife Api
 
-This is the backend of my Healthify app which consists of 3 tables, users, units, and measurements.
-The API is hosted in Heroku. The base url is https://fast-escarpment-85327.herokuapp.com and has the following endpoints
+This is the backend of my TrackLife app which consists of 3 tables, users, units, and measurements.
+The API is hosted in Heroku. The base url is https://test-final-api.herokuapp.com and has the following endpoints
 
 - POST /users 
 Arguments:
@@ -104,11 +104,11 @@ Deletes the given measurement
 
 ## Getting Started
 
-The project wroks with the postgresql database
-To test the endpoints locally you can use tunneling with ngrok or a similar tool
+The project works with the postgresql database
+To test the endpoints locally you can use postman, insomia or a similar tool
 
-- `git clone git@github.com:patrick-angelos/tracking-api.git`
-- `cd tracking-api`
+- `git clone https://github.com/Davidosky007/tracking-api-rails.git`
+- `cd tracking-api-rails`
 - `bundle install`
 - `rails db:create`
 - `rails db:migrate`
@@ -124,13 +124,11 @@ To run the tests:
 
 - `bundle exec rspec`
 
-## Author
+👤 **David Bassey**
 
-👤 **Patrikis Angelos**
-
-- GitHub: [@patrick-angelos](https://github.com/patrick-angelos)
-- Twitter: [@AngelosPatrikis](https://twitter.com/AngelosPatrikis)
-- LinkedIn: [Angelos Patrikis](https://www.linkedin.com/in/angelos-patrikis-a590a61b5/)
+* GitHub: [@davidosky007](https://github.com/davidosky007)
+* Twitter: [@davidosky2](https://twitter.com/Davidosky2)
+* LinkedIn: [David Bassey](https://www.linkedin.com/in/david-bassey-akan/)
 
 ## 🤝 Contributing
 
