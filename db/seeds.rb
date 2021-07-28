@@ -8,10 +8,11 @@
 
 Unit.create(title: 'Weight')
 Unit.create(title: 'Energy')
-Unit.create(title: 'Energy burned')
+Unit.create(title: 'Heart Beat')
 Unit.create(title: 'Fats')
 Unit.create(title: 'Saturated fats')
 Unit.create(title: 'Carbonhydrates')
-Unit.create(title: 'Sugar')
+Unit.create(title: 'Blood Sugar')
 Unit.create(title: 'Protein')
 Unit.create(title: 'Water')
+Unit.create(title: 'Blood Pressure')
