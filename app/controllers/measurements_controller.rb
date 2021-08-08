@@ -10,7 +10,7 @@ class MeasurementsController < ApplicationController
 
   def create
     @measurement = current_user.measurements.build(measurement_params)
-    @measurement.unit_id = params[:unit_id]
+    @measurement.unit_id = ActionController::Base.helpers.sanitize(params[:unit_id])
     if @measurement.save
       render json: { measurement: @measurement }
     else
