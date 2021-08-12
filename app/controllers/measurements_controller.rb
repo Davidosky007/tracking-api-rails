@@ -1,16 +1,12 @@
 class MeasurementsController < ApplicationController
   def index
-    @measurements = current_user.measurements.with_units.order(created_at: :desc)
-    data = Hash.new { |h, k| h[k] = [] }
-    @measurements.each do |m|
-      data[m.unit.title] << m
-    end
-    render json: { data: data, status: :ok }
+    @measurements = current_user.measurements.with_units.created_on
+    render json: { data: @measurements, status: :ok }
   end
 
   def create
     @measurement = current_user.measurements.build(measurement_params)
-    @measurement.unit_id = ActionController::Base.helpers.sanitize(params[:unit_id])
+    # @measurement.unit_id = ActionController::Base.helpers.sanitize(params[:unit_id])
     if @measurement.save
       render json: { measurement: @measurement }
     else

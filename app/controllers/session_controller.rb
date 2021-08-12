@@ -1,9 +1,8 @@
-class UsersController < ApplicationController
-  before_action :authorized, except: %i[create login show]
-
+class SessionController < ApplicationController
   def create
-    @user = User.new(user_params)
-    if @user.save
+    @user = User.find_by(name: params[:name])
+
+    if @user&.authenticate(params[:password])
       token = encode_token({ user_id: @user.id })
       render json: { token: token }
     else
@@ -14,6 +13,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name, :password)
+    params.require(:user).permit(:username, :password)
   end
 end
