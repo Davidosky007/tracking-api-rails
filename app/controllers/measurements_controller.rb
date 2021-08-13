@@ -1,8 +1,6 @@
 class MeasurementsController < ApplicationController
+  include Data
   def index
-    @measurements = current_user.measurements.with_units.created_on
-    new_data
-    end
     render json: { data: new_data, status: :ok }
   end
 
