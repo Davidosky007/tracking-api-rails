@@ -1,7 +1,11 @@
 class MeasurementsController < ApplicationController
-  include Data
   def index
-    render json: { data: new_data, status: :ok }
+    @measurements = current_user.measurements.with_units.created_on
+    data = Hash.new { |h, k| h[k] = [] }
+    @measurements.each do |m|
+      data[m.unit.title] << m
+    end
+    render json: { data: data, status: :ok }
   end
 
   def create
