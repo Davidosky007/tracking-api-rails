@@ -4,7 +4,7 @@ class MeasurementsController < ApplicationController
     data = Hash.new { |h, k| h[k] = [] }
     json_result = @measurements.pluck(:value, :id, :unit_id, :user_id, :created_at, :updated_at)
     # @measurements.each do |m|
-    data[json_result.unit.title] << json_result
+    data[@measurements.unit.title] << json_result
     # end
     render json: { data: data, status: :ok }
   end
