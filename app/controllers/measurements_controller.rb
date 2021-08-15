@@ -2,10 +2,10 @@ class MeasurementsController < ApplicationController
   def index
     @measurements = current_user.measurements.with_units.created_on
     data = Hash.new { |h, k| h[k] = [] }
-    json_result = @measurements.pluck(:value, :id, :unit_id, :user_id, :created_at, :updated_at)
-    # @measurements.each do |m|
-    data[@measurements.unit.title] << json_result
-    # end
+    # json_result = @measurements.pluck(:value, :id, :unit_id, :user_id, :created_at, :updated_at)
+    @measurements.each do |m|
+      data[m.unit.title] << m
+    end
     render json: { data: data, status: :ok }
   end
 
