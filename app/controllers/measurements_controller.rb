@@ -2,8 +2,8 @@ class MeasurementsController < ApplicationController
   before_action :measurement_params
 
   def index
-    @measurements = current_user.measurements.with_units.created_on
-    render json: { data: @measurements.as_json(include: :unit), status: :ok }
+    @filtereds = current_user.measurements.filter_by_unit(params[:unit_id])
+    render json: { data: @filtereds, status: :ok }
   end
 
   def create
