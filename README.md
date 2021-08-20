@@ -1,147 +1,87 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
+![visitors](https://visitor-badge.glitch.me/badge?page_id=abouhid/https://github.com/abouhid/Tracking_app_frontend)
 
-# TrackLife Api
+# Track.it
 
-This is the backend of my TrackLife app which consists of 3 tables, users, units, and measurements.
-The API is hosted in Heroku. The base url is https://test-final-api.herokuapp.com and has the following endpoints
+This is the Final Capstone Project for the Microverse Program, with the following requirements:
 
-- POST /users 
-Arguments:
-```
-{
-  name: <username>
-  password: <your_password>
-}
-```
-creates a user and responds with:
-```
-{
-  user: {}
-  token: user_token
-}
-```
+- The project is a mobile web app
+- The database has 2 tables (Measures and Measurements)
+- It uses Postgres as a database
+- Ruby on Rails was used for the back-end and to create a REST API
+- React was used for the front-end and uses redux to store the info across the app
+- The project is deployed accessible online
+- Implemented 2 nice-to-have requirements: user authentication from the front-end to the server and a panel to create / update / delete things to measure;
 
-- POST/login 
-Arguments:
-```
-{
-  name: <username>
-  password: <your_password>
-}
-```
-Logs in the user and responds with:
-```
-{
-  user: {}
-  token: user_token
-}
-```
-
-- GET /units 
-Arguments:
-```
-headers: {
-  Authorization: 'Bearer <token>'
-}
-```
-Returns a list of all the availiable units to measure
-
--GET /units/:id 
-Arguments:
-```
-headers: {
-  Authorization: 'Bearer <token>'
-}
-```
-Returns the unit with :id and a list of its measurements
-
-- GET /measurements
-Arguments:
-```
-headers: {
-  Authorization: 'Bearer <token>'
-}
-```
-returns an object with the name of the unit as keys and the list of measurements as values
-
-- POST /units/:unit_id/measurements 
-Arguments:
-```
-headers: {
-  Authorization: 'Bearer <token>'
-}
-body: {
-  value: <float>
-}
-```
-Creates a measurement for the corresponding unit
-
-- PUT /units/:unit_id/measurements/:id
-Arguments:
-```
-headers: {
-  Authorization: 'Bearer <token>'
-}
-body: {
-  value: <float>
-}
-```
-Updates the value of the given measurement
-
--DELETE /units/:unit_id/measurements/:id
-Arguments:
-```
-headers: {
-  Authorization: 'Bearer <token>'
-}
-```
-Deletes the given measurement
-
-
-## Built With
+## **Built With**
 
 - Ruby on Rails
+- JWT
+- Heroku
 
-## Getting Started
+## **How To Use**
 
-The project works with the postgresql database
-To test the endpoints locally you can use postman, insomia or a similar tool
+### **Structure**
 
-- `git clone https://github.com/Davidosky007/tracking-api-rails.git`
-- `cd tracking-api-rails`
-- `bundle install`
-- `rails db:create`
-- `rails db:migrate`
-- `rails db:seed` to populate the database
+This app is the back-end of the following project: [Track.it - Front-End](https://github.com/abouhid/Tracking_app_frontend)
 
-The authentication uses a environment variable to wotk. To set it up:
+The following diagram represents the relationship of the tables:
 
-- `bundle exec figaro install`
-In the `config/application.yml` file that will be created add:
-- `SECRET: <your_secret>`
+![screenshot](./schema.png)
 
-To run the tests:
+### **Endpoints of API**
 
-- `bundle exec rspec`
+| Endpoint                                 |                          Functionality |
+| ---------------------------------------- | -------------------------------------: |
+| POST /signup                             |                           Create Users |
+| POST /auth/login                         |                           Log In Users |
+| GET /api/v1/measurements                 |                   Get all Measurements |
+| GET /api/v1/measurements/:id             |              Get Specific Measurements |
+| DELETE /api/v1/measurements              |                     Remove Measurement |
+| GET /api/v1/measurements/:id/measures    | Get Measures of a Specific Measurement |
+| POST /api/v1/measurements/:id/measures   |             Add Measure to Measurement |
+| DELETE /api/v1/measurements/:id/measures |                     Remove Measurement |
 
-👤 **David Bassey**
+## **Deployed At:**
 
-* GitHub: [@davidosky007](https://github.com/davidosky007)
-* Twitter: [@davidosky2](https://twitter.com/Davidosky2)
-* LinkedIn: [David Bassey](https://www.linkedin.com/in/david-bassey-akan/)
+[Heroku](https://track-app-alex.herokuapp.com/)
+
+## **Getting Started**
+
+Clone the repository by clicking on "Clone or Download" and copy the given link. In your terminal, go to the folder where you want the project to be and use the following command:
+
+`git clone https://github.com/abouhid/Tracking_app_backend`
+
+`rails db:create db:migrate db:seed`
+
+## **Starting the Server**
+
+**To start the server run:** <br>
+`rails s -p 3001`
+
+## **Testing**
+
+**To check the test run the following command:** <br>
+`bundle exec rspec`
+
+## Author
+
+👤 **Alexandre Bouhid**
+
+- Github: [@abouhid](https://github.com/abouhid)
+- LinkedIn: [Alexandre Bouhid](https://www.linkedin.com/in/alexandrebouhid/)
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome!
+Contributions, issues and feature requests are welcome!
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
+## 📝 License
 
-- To Microverse for their `README` template.
-
-## 📝 [License]
-
-MIT License
+This project is [MIT](lic.url) licensed.
+=======
+# Tracking_app_backend
+>>>>>>> d83bf4e8136395d79394936b9e101a20a712d04c

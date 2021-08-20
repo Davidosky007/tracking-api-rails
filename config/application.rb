@@ -1,4 +1,5 @@
 require_relative "boot"
+require 'uri'
 
 require "rails"
 # Pick the frameworks you want:
@@ -19,7 +20,7 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module TrackingApi
+module TrackApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
@@ -36,12 +37,5 @@ module TrackingApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
-    config.force_ssl = true unless Rails.env.test?
-    config.middleware.insert_before 0, Rack::Cors do
-      allow do
-        origins '*'
-        resource '*', headers: :any, methods: [:get, :post, :options]
-      end
-    end
   end
 end

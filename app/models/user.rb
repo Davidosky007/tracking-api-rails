@@ -1,7 +1,10 @@
 class User < ApplicationRecord
+  # encrypt password
   has_secure_password
-  has_many :measurements, dependent: :destroy
+  validates_uniqueness_of :name, :email
 
-  validates :name, presence: true, uniqueness: true
-  validates :password_digest, presence: true
+  # Model associations
+  has_many :measurements, foreign_key: :created_by
+  # Validations
+  validates_presence_of :name, :email, :password_digest
 end
