@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :authentication, only: [:create]
+  post 'auth/login', to: 'authentication#create'
   post 'signup', to: 'users#create'
 end
