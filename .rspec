@@ -1,0 +1,4 @@
+--require spec_helper.rb
+--require rails_helper.rb
+--color
+--format documentation
