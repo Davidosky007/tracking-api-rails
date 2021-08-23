@@ -1,6 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
+![visitors](https://visitor-badge.glitch.me/badge?page_id=abouhid/https://github.com/abouhid/Tracking_app_frontend)
 
-# TrackLife
+# Track.it
 
 This is the Final Capstone Project for the Microverse Program, with the following requirements:
 
@@ -22,7 +23,7 @@ This is the Final Capstone Project for the Microverse Program, with the followin
 
 ### **Structure**
 
-This app is the back-end of the following project: [TrackLife - Front-End](https://github.com/Davidosky007/tracking-app-react)
+This app is the back-end of the following project: [Track.it - Front-End](https://github.com/abouhid/Tracking_app_frontend)
 
 The following diagram represents the relationship of the tables:
 
@@ -41,13 +42,15 @@ The following diagram represents the relationship of the tables:
 | POST /api/v1/measurements/:id/measures   |             Add Measure to Measurement |
 | DELETE /api/v1/measurements/:id/measures |                     Remove Measurement |
 
-## [LiveVersion](https://test-final-appli.herokuapp.com/)
+## **Deployed At:**
+
+[Heroku](https://track-app-alex.herokuapp.com/)
 
 ## **Getting Started**
 
 Clone the repository by clicking on "Clone or Download" and copy the given link. In your terminal, go to the folder where you want the project to be and use the following command:
 
-`git clone https://github.com/Davidosky007/tracking-api-rails`
+`git clone https://github.com/abouhid/Tracking_app_backend`
 
 `rails db:create db:migrate db:seed`
 
@@ -61,23 +64,24 @@ Clone the repository by clicking on "Clone or Download" and copy the given link.
 **To check the test run the following command:** <br>
 `bundle exec rspec`
 
+## Author
 
-👤 **David Bassey**
+👤 **Alexandre Bouhid**
 
-* GitHub: [@davidosky007](https://github.com/davidosky007)
-* Twitter: [@davidosky2](https://twitter.com/Davidosky2)
-* LinkedIn: [David Bassey](https://www.linkedin.com/in/david-bassey-akan/)
+- Github: [@abouhid](https://github.com/abouhid)
+- LinkedIn: [Alexandre Bouhid](https://www.linkedin.com/in/alexandrebouhid/)
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome!
+Contributions, issues and feature requests are welcome!
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
+## 📝 License
 
-- To Microverse for their `README` template.
-
-## 📝 [License](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+This project is [MIT](lic.url) licensed.
+=======
+# Tracking_app_backend
+>>>>>>> d83bf4e8136395d79394936b9e101a20a712d04c

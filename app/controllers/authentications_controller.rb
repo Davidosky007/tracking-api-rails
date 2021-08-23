@@ -1,4 +1,4 @@
-class AuthenticationController < ApplicationController
+class AuthenticationsController < ApplicationController
   # return auth token once user is authenticated
   skip_before_action :authorize_request, only: :create
 
