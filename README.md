@@ -33,7 +33,7 @@ The following diagram represents the relationship of the tables:
 | Endpoint                                 |                          Functionality |
 | ---------------------------------------- | -------------------------------------: |
 | POST /signup                             |                           Create Users |
-| POST /auth/login                         |                           Log In Users |
+| POST /authentication                     |                           Log In Users |
 | GET /api/v1/measurements                 |                   Get all Measurements |
 | GET /api/v1/measurements/:id             |              Get Specific Measurements |
 | DELETE /api/v1/measurements              |                     Remove Measurement |
@@ -41,7 +41,7 @@ The following diagram represents the relationship of the tables:
 | POST /api/v1/measurements/:id/measures   |             Add Measure to Measurement |
 | DELETE /api/v1/measurements/:id/measures |                     Remove Measurement |
 
-## [LiveVersion](https://test-final-appli.herokuapp.com/)
+## [LiveVersion](https://final-fianal.herokuapp.com)
 
 ## **Getting Started**
 
